@@ -16,7 +16,7 @@ public class DefinitionOfChronotype implements Function<List<SleepingSession>, S
         }
 
         Map<Chronotype, Long> chronotypeCounts = sleepingSessions.stream()
-                .map(this::Definition)
+                .map(this::definition)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         if (chronotypeCounts.containsKey(Chronotype.LARK) &&
@@ -32,7 +32,7 @@ public class DefinitionOfChronotype implements Function<List<SleepingSession>, S
         }
     }
 
-    public Chronotype Definition(SleepingSession sleepingSession) {
+    public Chronotype definition(SleepingSession sleepingSession) {
         LocalTime sleepOwl = LocalTime.of(23, 0);
         LocalTime wakeUpOwl = LocalTime.of(9, 0);
         LocalTime sleepLark = LocalTime.of(22, 0);
