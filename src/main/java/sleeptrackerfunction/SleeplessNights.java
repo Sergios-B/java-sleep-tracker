@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class SleeplessNights implements Function<List<SleepingSession>, SleepAnalysisResult> {
     @Override
     public SleepAnalysisResult apply(List<SleepingSession> sleepingSessions) {
-        if (sleepingSessions.isEmpty()){
+        if (sleepingSessions.isEmpty()) {
             return new SleepAnalysisResult("Количество бессонных ночей: " + 0, 0);
         }
         int countAllNights = Period.between(sleepingSessions.getFirst().getFallingAsleep().toLocalDate(), sleepingSessions.getLast().getAwakening().toLocalDate()).getDays();
