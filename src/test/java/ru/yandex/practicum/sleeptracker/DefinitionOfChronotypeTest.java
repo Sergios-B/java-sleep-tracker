@@ -2,12 +2,10 @@ package ru.yandex.practicum.sleeptracker;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sleeptrackerfunction.AverageSessionDuration;
 import sleeptrackerfunction.Chronotype;
 import sleeptrackerfunction.DefinitionOfChronotype;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
