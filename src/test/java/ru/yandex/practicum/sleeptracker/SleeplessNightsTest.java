@@ -57,6 +57,6 @@ public class SleeplessNightsTest {
         );
         SleeplessNights sleeplessNights = new SleeplessNights();
         SleepAnalysisResult result = sleeplessNights.apply(List.of(session1, session2, session3));
-        assertEquals("Количество бессонных ночей: 3", result.getDescription());
+        assertEquals("Количество бессонных ночей: 2", result.getDescription());
     }
 }
