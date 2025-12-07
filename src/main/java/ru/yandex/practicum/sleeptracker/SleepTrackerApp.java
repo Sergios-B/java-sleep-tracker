@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class SleepTrackerApp {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         if (args.length == 0) {
             System.out.println("Пожалуйста, укажите путь к файлу с логом сна.");
             return;
@@ -31,7 +31,7 @@ public class SleepTrackerApp {
                         String[] parts = line.split(";");
                         LocalDateTime fallingAsleep = LocalDateTime.parse(parts[0], DateTimeFormatter.ofPattern("dd.MM.yy HH:mm"));
                         LocalDateTime awakening = LocalDateTime.parse(parts[1], DateTimeFormatter.ofPattern("dd.MM.yy HH:mm"));
-                        SleepQuality sleepQuality = SleepQuality.valueOf(parts[2]);
+                        SleepQuality sleepQuality = SleepQuality.valueOf(parts[2].trim());
                         return new SleepingSession(fallingAsleep, awakening, sleepQuality);
                     })
                     .toList();

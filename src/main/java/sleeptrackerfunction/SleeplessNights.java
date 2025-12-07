@@ -22,7 +22,7 @@ public class SleeplessNights implements Function<List<SleepingSession>, SleepAna
                     LocalDateTime fallAsleepTime = x.getFallingAsleep();
                     LocalDateTime awakeningTime = x.getAwakening();
                     LocalDateTime normalEnd = LocalDateTime.of(awakeningTime.toLocalDate(), LocalTime.of(6, 0));
-                    if (fallAsleepTime.getDayOfYear() != awakeningTime.getDayOfYear() || awakeningTime.isBefore(normalEnd)) {
+                    if (fallAsleepTime.getDayOfYear() != awakeningTime.getDayOfYear() || fallAsleepTime.isBefore(normalEnd)) {
                         return 1;
                     } else {
                         return 0;
